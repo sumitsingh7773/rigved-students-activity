@@ -1,0 +1,65 @@
+#sidebar {
+    background-color: aqua; width: 30%; height: 500px; float: left;
+}
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: center;
+}
+div {
+    background-color: orange;width: 100px; height: 100px; border: 2px solid black;
+}
+#horizontal {
+    background-color: rgb(58, 168, 168); width: 70%; height: 120px; float: right;
+}
+#horizontal2 {
+    background-color: rgb(37, 80, 175); width: 70%; height: 380px; float: right;
+}
+.rot {
+    display: inline-block; margin-left: 150px;
+}
+#square {
+    animation: updown 5s infinite alternate; position: relative;
+}
+@keyframes updown{
+    0% {left: 10px; top: 10px;}
+    100% {left: 10px; top: 380px;}
+}
+#circle {
+    border-radius: 50% 50% 50% 50%; position: relative;
+    animation: infinite alternate downup 5s;
+}
+@keyframes downup {
+    0% {left: 10px; top: 280px;}
+    100% {left: 10px; top: 10px;}
+}
+#rot1 {
+    animation: rotatex 5s infinite;
+}
+@keyframes rotatex {
+    0% { transform: rotateX(0deg);}
+    100% {transform: rotateX(360deg);}    
+}
+#rot2{
+    animation: rotatey 5s infinite;
+}
+@keyframes rotatey {
+    0% { transform: rotatey(0deg);}
+    100% {transform: rotatey(360deg);} 
+}
+#rot3{
+    animation: rotate 5s infinite;
+}
+@keyframes rotate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+#mover {
+    animation: movers 5s infinite; margin: 1%; flex-direction: row; position: relative;
+}
+
+@keyframes movers {
+    0% {left: 400px; top: 10px; background-color: red;}
+    25% {left: 750px; top: 10px; background-color: rgb(216, 214, 109);}
+    50% {left: 750px; top: 250px; background-color: rgb(0, 255, 21);}
+    75% {left: 10px; top: 250px; background-color: rgb(0, 238, 255);}
+    100% {left: 10px; top: 10px; background-color: rgb(204, 0, 255);}
+}
