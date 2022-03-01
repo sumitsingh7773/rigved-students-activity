@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PyramidstarPattern</title>
+</head>
+<body>
+  <h2>Pyramid star pattern in javascript </h2>
+  <script>
+    let n = 5; 
+    let string = "";
+    for (let i = 1; i <= n; i++) {
+      for (let j = n; j > i; j--) {
+        string += " ";
+      }
+      for (let k = 0; k < i * 2- 1; k++) {
+        string += "*";
+      }
+      string += "<br>";
+    }
+    document.write(`<pre>${string}</pre>`);
+  </script>
+</body>
