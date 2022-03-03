@@ -1,0 +1,143 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>ValidationReg Form</title>    
+    <style type="text/css">    
+        body{    
+            font-family: Calibri;    
+        }    
+        input[type="text"] {    
+            width: 250px;    
+        }    
+        input[type="submit"], input[type="reset"] {    
+            width: 77px;    
+            height: 27px;    
+            position: relative;left: 180px;    
+        }    
+        form{    
+            text-align: center;    
+            font-family: Calibri;    
+            font-size: 20px;   
+            background-color: chartreuse;
+            border: 10px solid rgb(50, 47, 255);    
+            width: 800px;    
+            margin: 20px auto;    
+        }    
+        td {    
+            padding: 10px;    
+        }    
+        td:first-child {    
+            text-align: right;    
+            font-weight: bold;    
+        }    
+        td:last-child {    
+            text-align: left;    
+    
+    </style>    
+    <script>    
+        function validateRegistration() {    
+            var reg_form = document.reg;
+            var fname = reg_form.fname;    
+            var lname = reg_form.lname;    
+            var pass =reg_form.pw;
+            var ConfirmPass =reg_form.cpw;   
+            var gender = reg_form.gen;    
+            var skills =reg_form.tech;    
+ 
+    
+            if (fname.value.length < 3) {    
+                alert("Name is required must be more than 3 character");      
+                return false;    
+            }    
+            if (lname.value.length < 3) {    
+                alert("Last Name is required  must be more than 1 character");    
+                return false;    
+            }  
+            if (pass.value.length < 3) {    
+                alert("Password is  must be more than 3 character required");    
+                return false;    
+            }    
+            
+            if (pass.value!=confirmPass.value) {    
+                alert("Password and Confirm password must be same");    
+                return false;    
+            }      
+           
+            if (gender.value.length < 1) {    
+                alert("gender should must be selected");     
+                return false;    
+            }    
+            var flag=false;
+            for(var i=0;i<skills.length;i++){
+                if(skills[i].checked){
+                    flag=true;
+                }
+            }
+            if (flag=false) {    
+                alert("Atleast one skills must be selected");    
+                return false;    
+            }    
+            return true;
+        }    
+    </script>    
+</head>    
+<body>    
+    <center><h1> Registration Validation Form</h1></center>    
+    <hr>  
+    <form name = "reg" action = "" method = "post" onsubmit="return validateRegistration()">     
+        <table>    
+            <tr>    
+                <td><label>First Name </label></td>    
+                <td>    
+                    <input type="text" name="fname" placeholder="First Name"autocomplete="off">    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Last Name </label></td>    
+                <td>    
+                    <input type="text" name="lname" placeholder="Last Name"autocomplete="off">    
+                </td>    
+            </tr>  
+            <tr>  
+                <td><label> Enter Password </label></td>    
+                <td>    
+            <input type="textarea" size="8" name="pw" placeholder=" Enter Password" autocomplete="off">    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label> Confirm Password </label></td>    
+                <td>    
+                    <input type="textarea" size="8" name="cpw" placeholder=" Confirm Password" autocomplete="off"> 
+            
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Gender </label></td>    
+                <td>    
+                    <input type="radio" name="gen" value="male">Male    
+                    <input type="radio" name="gen" value="femele">Female    
+                </td>    
+            </tr>    
+            
+            <tr>
+            <td><label>Skills</label></td>
+                    <td>
+                    <input type="checkbox"name="tech" value="C" align="center">
+                    <label for="tech">C</label>
+                     <input type="checkbox" id="p2" name="tech" value="Python">
+                     <label for="tech"> Python</label>
+                     <input type="checkbox" id="j3" name="tech" value="Java">
+                     <label for="tech"> Java</label><br><br>
+                </td>    
+            </tr>    
+        <br />
+            <tr>    
+                <td>    
+                    <input type = "submit" value = "Submit">
+                    <input type = "reset" value = "Reset">
+                </td>    
+            </tr>             
+        </table>    
+    </form>    
+</body>    
+</html>     
