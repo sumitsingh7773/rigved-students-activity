@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CalculationJs</title>  
+        <style type="text/css">
+            body {
+              margin: 30px;
+              background-color:gold;
+            }
+          </style>
+<body>
+    <center><h1> Add,Sub,Mul,Div in JavaScript</h1></center> 
+  <script type="text/javascript">
+       function addition(){
+      a=Number(document.my_cal.first.value);
+      b=Number(document.my_cal.second.value);
+      c=a+b;
+      document.my_cal.total.value=c;
+    }
+    function subtraction(){
+      a=Number(document.my_cal.first.value);
+      b=Number(document.my_cal.second.value);
+      c=a-b;
+      document.my_cal.total.value=c;
+    }
+
+    function multiply(){
+      a=Number(document.my_cal.first.value);
+      b=Number(document.my_cal.second.value);
+      c=a*b;
+      document.my_cal.total.value=c;
+    }
+    function division(){
+      a=Number(document.my_cal.first.value);
+      b=Number(document.my_cal.second.value);
+      c=a/b;
+      document.my_cal.total.value=c;
+    }
+
+  </script>
+  <form name="my_cal">
+    Input1: <input type="text" name="first"><br><br>
+    Input2: <input type="text" name="second"><br><br>
+    Result: <input type="text" name="total"><br>
+   <br><br>
+
+    <input type="button" value="ADD" onclick="javascript:addition();">
+    <input type="button" value="SUB" onclick="javascript:subtraction();">
+    <input type="button" value="MUL" onclick="javascript:multiply();">
+    <input type="button" value="DIV" onclick="javascript:division();">
+    
+    <br><br>
+
+  </head>
+  </body>
+  </html>
