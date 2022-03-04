@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OtpGenerate</title>
+	<style type="text/css">
+		body {
+		  margin: 200px;
+		  background-color:aqua;
+		  text-align: center;
+	      padding: 23px;
+
+		}
+	  </style>
+</head>
+<body>
+    <h1>OTP Generate in JavaScript </h1>
+    <script>
+        var number = prompt("What number do you like to pick for OTP 4 or 6 ?");
+
+        function generateOTP(){
+                if(number!=4 && number!=6){
+                    alert("OTP number accepted only two digit 4 or 6 Number!");
+                     return document.write("OTP  is not Generated.......Try Again !");
+                } 
+            
+                var digits = '0123456789';
+                let OTP = '';
+                for (let i = 0; i < number; i++ ) {
+                OTP += digits[Math.floor(Math.random() * 10)];
+                }
+            return OTP;
+        }
+        
+        document.write("OTP of " + number + " digits : "+generateOTP());
+        </script>
+</body>
+</html>
