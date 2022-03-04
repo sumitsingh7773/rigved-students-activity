@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CustomersTable</title>
+</head>
+<style>
+    table, th, td {
+      border:3px solid black;
+    }
+    </style>
+    <body>
+    <table style="width:50%">
+    </table>
+
+</body>
+ <script type = "text/javascript">
+let customersD= [
+   
+   { CustomerId: 12345, Fullname: 'Sachin Tendulkar',State:'Maharastra', City:'Mumbai'},
+   { CustomerId: 28845, Fullname: 'Rahul Dravid',State:'Karnataka',City:'Bangalore'},
+   { CustomerId: 42446, Fullname: 'Rohit Sharma',State:'Maharastra',City:'Pune'},
+ ];
+ 
+ function generateTableHead(table, data) {
+   let thead = table.createTHead();
+   let row = thead.insertRow();
+   for (let key of data) {
+     let th = document.createElement("th");
+     let text = document.createTextNode(key);
+     th.appendChild(text);
+     row.appendChild(th);
+   }
+ }
+ 
+ function generateTable(table, data) {
+   for (let element of data) {
+     let row = table.insertRow();
+     for (key in element) {
+       let cell = row.insertCell();
+       let text = document.createTextNode(element[key]);
+       cell.appendChild(text);
+     }
+   }
+ }
+ 
+ let table = document.querySelector("table");
+ let data = Object.keys(customersD[0]);
+ generateTableHead(table, data);
+ 
+ generateTable(table, customersD);
+</script>
+</html>
