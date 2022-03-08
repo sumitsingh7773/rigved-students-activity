@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Modified</title>
+    <style type="text/css">    
+        body {
+           margin: 200px;
+           background-color:bisque;
+           text-align: center;
+           padding: 30px;
+ 
+         }
+ </style>    
+</head>
+<body>
+    <h2>Welcome to Third Page</h2>
+    <Form>
+        <label>Change Age <input type="text" name="age" id="i2" autocomplete="off"></label><br/>
+        <button onclick = "editAge()">Edit Data</button><br/>
+        <a href = "SecondPage.html">Fetching Data</a>
+    </Form>
+    <script type="text/javascript">
+            function editAge() {
+                var age = parseInt(document.getElementById('i2').value);
+                sessionStorage.setItem('age', age);
+            
+        }
+    </script>
+</body>
+</html>
