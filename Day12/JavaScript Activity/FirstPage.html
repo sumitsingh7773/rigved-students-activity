@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Page</title>
+    <style type="text/css">    
+       body {
+		  margin: 200px;
+		  background-color:rgb(255, 189, 47);
+		  text-align: center;
+	      padding: 30px;
+
+		}
+ </style>    
+</head>
+<body>
+   
+    <h1>Welcome to First Page</h1>
+  
+    <label> Name <input type = "text" name = "n1" id = "i1"></label><br/>
+    <label> Age <input type = "text" name = "a1" id = "i2"></label><br/>
+    <tr>    
+        <td>   
+            <input type = "button" value = "store" onclick="storeUser()"> <br />
+            <a href = "SecondPage.html">Fetching Data</a>
+         </td>    
+     </tr>       
+    
+    <script type = "text/javascript">
+        function storeUser() {
+            
+            var input = document.getElementById('i1').value;
+            var age = document.getElementById('i2').value;
+            if(input.length < 1) {
+                alert("please enter some value");
+            } else {
+                sessionStorage.setItem('user', input);
+                sessionStorage.setItem('age', age);
+            }
+        }
+    </script>
+</body>
+</html>
