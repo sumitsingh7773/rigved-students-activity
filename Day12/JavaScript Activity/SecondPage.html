@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Page</title>
+    <style type="text/css">    
+        body {
+           margin: 200px;
+           background-color:rgb(145, 255, 0);
+           text-align: center;
+           padding: 30px;
+ 
+         }
+ </style>    
+</head>
+<body>
+    <h2>Welcome to Output Page</h2>
+    <div id = 'i1'></div>
+    <div id = 'i2'></div>
+    <a href="FirstPage.html">Previous Page</a>
+    <a href = "ThirdPage.html">Edit Age</a>
+
+    <script type = "text/javascript">
+        var data = sessionStorage.getItem('user');
+        var data2 = sessionStorage.getItem('age');
+        document.getElementById('i1').innerHTML = "Heyy<br/> "+data
+        document.getElementById('i2').innerHTML = "Your Age is<br/> "+data2
+
+    </script>
+</body>
+</html>
