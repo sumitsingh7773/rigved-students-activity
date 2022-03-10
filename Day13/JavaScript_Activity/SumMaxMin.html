@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <title>
+      MinMaxSum
+  </title>
+</head>
+  
+<body>
+   <script> 
+var  arr1 = [10, 20, 30, 5, 15]; 
+ //Print sum
+        var sum = arr1.reduce(function(a, b){
+            return a + b;
+        }, 0);
+    document.write( "Sum of number =" + sum + "<br>"); 
+//print the Max value
+	var max= Math.max.apply(null,arr1);
+	document.write("Maximum number ="+max +"<br>"); 
+//print the Min value	 
+	var min = Math.min.apply(null, arr1);
+	document.write( "Minimum number in Array element ="+min);  
+
+</script>
+</body>
+</html>
