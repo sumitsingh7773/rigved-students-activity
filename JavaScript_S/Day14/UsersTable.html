@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UsersTable</title>
+    <style>
+      h1 {
+        height:60px;
+        text-align: center;
+        background-color:orange;
+      }
+    table {
+    background-color: coral;
+    table-layout: auto;
+    border-collapse: collapse;
+    width: 100%;
+}
+table td { 
+    border: 4px solid green ;
+    text-align: center;
+    padding: 6px
+}
+ </style>
+</head>
+<body>
+    <h1>*User Details*</h1>
+    <script type = "text/javascript">
+        let users = [
+        {name : "Alex", age : 35, address: {state: "KA", city : "BLR"}},
+        {name : "Bruce", age : 45,},
+        {name : "Charles", age : 25, address: {state: "MH", city : "MBI"}},
+        {name : "David", age : 49,},
+        {name : "Edward", age : 33, address: {state: "TN", city : "CHN"}}
+        ];
+     document.write(`<table border="4px">`)
+    document.write(`<tr><th>Name</th> <th>Age</th> <th>City</th> <th>State</th></tr>`)
+    for( i=0; i<users.length; i++)
+    document.write(`<tr><td> ${users[i].name}</td><td> ${users[i].age}</td><td> ${users[i]?.address?.city}</td><td>  ${users[i]?.address?.state}</td></tr>`)
+    document.write(`</table>`)
+      
+</script>
+</body>
+</html>
