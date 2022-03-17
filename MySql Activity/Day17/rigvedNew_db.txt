@@ -1,0 +1,154 @@
+
+mysql> create database Rigved_db;
+Query OK, 1 row affected (0.25 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| employee_db        |
+| information_schema |
+| mysql              |
+| performance_schema |
+| rigved_db          |
+| sys                |
++--------------------+
+6 rows in set (0.13 sec)
+
+mysql> use Rigved_db;
+Database changed
+mysql> show tables;
+Empty set (0.09 sec)
+
+mysql>  create table Rig_emp(id int primary key, name varchar(30) not null, age int, check (age<60 and age>18),email varchar(20) unique );
+Query OK, 0 rows affected (2.28 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_rigved_db |
++---------------------+
+| rig_emp             |
++---------------------+
+1 row in set (0.05 sec)
+
+mysql> desc rig_emp;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | NO   | PRI | NULL    |       |
+| name  | varchar(30) | NO   |     | NULL    |       |
+| age   | int         | YES  |     | NULL    |       |
+| email | varchar(20) | YES  | UNI | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+4 rows in set (0.17 sec)
+
+mysql> insert into rig_emp values(101,'Nikhil',26,'nikhil12@gmail.com');
+Query OK, 1 row affected (0.28 sec)
+
+mysql> insert into rig_emp values(102,'Vikas',25,'vikas132@gmail.com');
+Query OK, 1 row affected (0.16 sec)
+
+mysql>  insert into rig_emp values(103,'Saurabh',25,'sau233@gmail.com');
+Query OK, 1 row affected (0.10 sec)
+
+mysql> insert into rig_emp values(102,'Shubham',26,'shubh211@gmail.com');
+ERROR 1062 (23000): Duplicate entry '102' for key 'rig_emp.PRIMARY'
+mysql> >  insert into rig_emp values(104,'Shubham',26,'shubh211@gmail.com');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '>  insert into rig_emp values(104,'Shubham',26,'shubh211@gmail.com')' at line 1
+mysql> insert into rig_emp values(104,'Shubham',26,'shubh211@gmail.com');
+Query OK, 1 row affected (0.12 sec)
+
+mysql>  insert into rig_emp values(105,'Sumit',25,'sumit343@gmail.com');
+Query OK, 1 row affected (0.14 sec)
+
+mysql> select * from rig_emp;
++-----+---------+------+--------------------+
+| id  | name    | age  | email              |
++-----+---------+------+--------------------+
+| 101 | Nikhil  |   26 | nikhil12@gmail.com |
+| 102 | Vikas   |   25 | vikas132@gmail.com |
+| 103 | Saurabh |   25 | sau233@gmail.com   |
+| 104 | Shubham |   26 | shubh211@gmail.com |
+| 105 | Sumit   |   25 | sumit343@gmail.com |
++-----+---------+------+--------------------+
+5 rows in set (0.00 sec)
+
+mysql> alter table rig_emp add column pan varchar(10), add column aadhar bigint;
+Query OK, 0 rows affected (1.43 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc rig_emp;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| id     | int         | NO   | PRI | NULL    |       |
+| name   | varchar(30) | NO   |     | NULL    |       |
+| age    | int         | YES  |     | NULL    |       |
+| email  | varchar(20) | YES  | UNI | NULL    |       |
+| pan    | varchar(10) | YES  |     | NULL    |       |
+| aadhar | bigint      | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+6 rows in set (0.07 sec)
+
+mysql> alter table rig_emp add constraint uniid_pan unique key (pan),add constraint uniid_aadhar unique key (aadhar);
+Query OK, 0 rows affected (0.95 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> des rig_emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'des rig_emp' at line 1
+mysql> desc rig_emp;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| id     | int         | NO   | PRI | NULL    |       |
+| name   | varchar(30) | NO   |     | NULL    |       |
+| age    | int         | YES  |     | NULL    |       |
+| email  | varchar(20) | YES  | UNI | NULL    |       |
+| pan    | varchar(10) | YES  | UNI | NULL    |       |
+| aadhar | bigint      | YES  | UNI | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+6 rows in set (0.10 sec)
+
+mysql> select * from rig_emp;
++-----+---------+------+--------------------+------+--------+
+| id  | name    | age  | email              | pan  | aadhar |
++-----+---------+------+--------------------+------+--------+
+| 101 | Nikhil  |   26 | nikhil12@gmail.com | NULL |   NULL |
+| 102 | Vikas   |   25 | vikas132@gmail.com | NULL |   NULL |
+| 103 | Saurabh |   25 | sau233@gmail.com   | NULL |   NULL |
+| 104 | Shubham |   26 | shubh211@gmail.com | NULL |   NULL |
+| 105 | Sumit   |   25 | sumit343@gmail.com | NULL |   NULL |
++-----+---------+------+--------------------+------+--------+
+5 rows in set (0.00 sec)
+
+mysql>  insert into rig_emp values(101,'Nikhil',26,'nikhil12@gmail.com','Nk19RTYTPT',1243 3445 1919);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '3445 1919)' at line 1
+
+mysql> insert into rig_emp values(106,'Amit',31,'amit431@gmail.com','Amr65RTYU',124334451919);
+Query OK, 1 row affected (0.12 sec)
+
+mysql> insert into rig_emp values(107,'Archit',28,'archit501@gmail.com','ATu563TEWq',190981235488);
+Query OK, 1 row affected (0.13 sec)
+
+mysql>  into rig_emp values(108,'Nitish',27,'nitish095@gmail.com','NT06tyeTR',20987690188);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'into rig_emp values(108,'Nitish',27,'nitish095@gmail.com','NT06tyeTR',2098769018' at line 1
+mysql> insert into rig_emp values(108,'Nitish',27,'nitish095@gmail.com','NT06tye56P',20987690188);
+Query OK, 1 row affected (0.10 sec)
+
+mysql>  select * from rig_emp;
++-----+---------+------+---------------------+------------+--------------+
+| id  | name    | age  | email               | pan        | aadhar       |
++-----+---------+------+---------------------+------------+--------------+
+| 101 | Nikhil  |   26 | nikhil12@gmail.com  | NULL       |         NULL |
+| 102 | Vikas   |   25 | vikas132@gmail.com  | NULL       |         NULL |
+| 103 | Saurabh |   25 | sau233@gmail.com    | NULL       |         NULL |
+| 104 | Shubham |   26 | shubh211@gmail.com  | NULL       |         NULL |
+| 105 | Sumit   |   25 | sumit343@gmail.com  | NULL       |         NULL |
+| 106 | Amit    |   31 | amit431@gmail.com   | Amr65RTYU  | 124334451919 |
+| 107 | Archit  |   28 | archit501@gmail.com | ATu563TEWq | 190981235488 |
+| 108 | Nitish  |   27 | nitish095@gmail.com | NT06tye56P |  20987690188 |
++-----+---------+------+---------------------+------------+--------------+
+8 rows in set (0.06 sec)
+
+mysql>
+
