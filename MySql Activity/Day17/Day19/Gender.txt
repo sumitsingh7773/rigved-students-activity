@@ -1,0 +1,90 @@
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| employee_db        |
+| information_schema |
+| marksheet_db       |
+| mysql              |
+| performance_schema |
+| rigved_db          |
+| stumarks_db        |
+| sys                |
++--------------------+
+8 rows in set (0.03 sec)
+
+mysql> use rigved_db;
+Database changed
+mysql> delimiter $$
+mysql>  create table PersonP(Id int primary key, Name varchar(25), Gender varchar(10)); $$
+Query OK, 0 rows affected (0.68 sec)
+
+mysql>  insert into PersonP values(10, 'Raj', 'Male'), (11, 'Alia', 'Female'),(12,'Ramesh','Male'); $$
+Query OK, 3 rows affected (0.22 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql>  select * from PersonP $$
++----+--------+--------+
+| Id | Name   | Gender |
++----+--------+--------+
+| 10 | Raj    | Male   |
+| 11 | Alia   | Female |
+| 12 | Ramesh | Male   |
++----+--------+--------+
+3 rows in set (0.00 sec)
+
+mysql> delimiter $$
+mysql> create procedure desc_PersonP(IN PersonId int)
+    -> begin
+    -> declare nme varchar(25);
+    -> declare gen varchar(10);
+    -> select Gender into gen from PersonP where id = PersonId;
+    -> select Name into nme from PersonP where id = PersonId;
+    ->  if gen = 'Male'
+    -> then update PersonP set Name = concat('Mr.',nme) where id = PersonId;
+    -> else update PersonP set Name = concat('Mrs.',nme) where id = PersonId;
+    -> end if;
+    -> end $$
+Query OK, 0 rows affected (0.23 sec)
+
+mysql> call desc_PersonP(10)$$
+Query OK, 1 row affected (0.17 sec)
+
+mysql> select * from PersonP$$
++----+--------+--------+
+| Id | Name   | Gender |
++----+--------+--------+
+| 10 | Mr.Raj | Male   |
+| 11 | Alia   | Female |
+| 12 | Ramesh | Male   |
++----+--------+--------+
+3 rows in set (0.00 sec)
+
+mysql>  call desc_PersonP(11)$$
+Query OK, 1 row affected (0.10 sec)
+
+mysql> select * from PersonP$$
++----+----------+--------+
+| Id | Name     | Gender |
++----+----------+--------+
+| 10 | Mr.Raj   | Male   |
+| 11 | Mrs.Alia | Female |
+| 12 | Ramesh   | Male   |
++----+----------+--------+
+3 rows in set (0.00 sec)
+
+mysql> call desc_PersonP(12)$$
+Query OK, 1 row affected (0.10 sec)
+
+mysql> select * from PersonP$$
++----+-----------+--------+
+| Id | Name      | Gender |
++----+-----------+--------+
+| 10 | Mr.Raj    | Male   |
+| 11 | Mrs.Alia  | Female |
+| 12 | Mr.Ramesh | Male   |
++----+-----------+--------+
+3 rows in set (0.00 sec)
+
+mysql>
