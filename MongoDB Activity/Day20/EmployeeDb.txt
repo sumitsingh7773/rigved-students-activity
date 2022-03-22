@@ -1,0 +1,89 @@
+
+C:\Users\sumit>mongo
+MongoDB shell version v5.0.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("f9ee4321-0e74-4cd1-bcb9-32deb9f6aae9") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+        https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+        https://community.mongodb.com
+---
+The server generated these startup warnings when booting:
+        2022-03-21T17:17:18.680+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+        2022-03-21T17:17:18.681+05:30: This server is bound to localhost. Remote systems will be unable to connect to this server. Start the server with --bind_ip <address> to specify which IP addresses it should serve responses from, or with --bind_ip_all to bind to all interfaces. If this behavior is desired, start the server with --bind_ip 127.0.0.1 to disable this warning
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show databases;
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use EMPLOYEES
+switched to db EMPLOYEES
+> db.createCollection("EMPLOYEE")
+{ "ok" : 1 }
+>  db.createCollection("employee")
+{ "ok" : 1 }
+> db.employee.insertMany([
+... {_id:01, name:"Nikhil", password:44332211},
+... {_id:02, name:"Vikas", password:55443322},
+... {_id:03, name:"Saurabh", password:66554433}
+... ]);
+{ "acknowledged" : true, "insertedIds" : [ 1, 2, 3 ] }
+> db.EMPLOYEE.insertMany([ {_id:04, name:"Nikhil", password:44332211}, {_id:05, name:"Vikas", password:55443322}, {_id:06, name:"Saurabh", password:66554433} ]);
+{ "acknowledged" : true, "insertedIds" : [ 4, 5, 6 ] }
+> db.employee.find({'name':'Nikhil'});
+{ "_id" : 1, "name" : "Nikhil", "password" : 44332211 }
+> db.employee.find({'name':'Vikas'});
+{ "_id" : 2, "name" : "Vikas", "password" : 55443322 }
+> db.employee.find({'name':'Saurabh'});
+{ "_id" : 3, "name" : "Saurabh", "password" : 66554433 }
+> db.employee.update({"_id": 1},{$set:{"password":23232323}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.employee.update({"_id": 2},{$set:{"password":31313131}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.employee.update({"_id": 3},{$set:{"password":26262626}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.EMPLOYEE.remove({"_id": 4});
+WriteResult({ "nRemoved" : 1 })
+> db.EMPLOYEE.find();
+{ "_id" : 5, "name" : "Vikas", "password" : 55443322 }
+{ "_id" : 6, "name" : "Saurabh", "password" : 66554433 }
+> b.EMPLOYEE.drop();
+uncaught exception: ReferenceError: b is not defined :
+@(shell):1:1
+
+> true
+true
+> db.EMPLOYEE.find();
+{ "_id" : 5, "name" : "Vikas", "password" : 55443322 }
+{ "_id" : 6, "name" : "Saurabh", "password" : 66554433 }
+> db.employee.insertMany([ {_id:4, name:"Ramesh", password:123333123},
+... ... {_id:5,name:"Nitesh",password:12121212}]);
+{ "acknowledged" : true, "insertedIds" : [ 4, 5 ] }
+> db.employee.find();
+{ "_id" : 1, "name" : "Nikhil", "password" : 23232323 }
+{ "_id" : 2, "name" : "Vikas", "password" : 31313131 }
+{ "_id" : 3, "name" : "Saurabh", "password" : 26262626 }
+{ "_id" : 4, "name" : "Ramesh", "password" : 123333123 }
+{ "_id" : 5, "name" : "Nitesh", "password" : 12121212 }
+>
