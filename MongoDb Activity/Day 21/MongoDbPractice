@@ -1,0 +1,296 @@
+> use mydb;
+switched to db mydb
+> show collections;
+> db.createCollection("emp");
+{ "ok" : 1 }
+>  db.createCollection("user");
+{ "ok" : 1 }
+> use mydb;
+switched to db mydb
+> show collections;
+emp
+user
+> db.user.find();
+> db.myCollection.insert({_id:11, name:Alex"});
+uncaught exception: SyntaxError: "" literal not terminated before end of script :
+@(shell):1:45
+>  db.myCollection.insert({_id:11, name:"Alex"});
+WriteResult({ "nInserted" : 1 })
+>  db.myCollection.insert({_id:12, name:"Bruce"});
+WriteResult({ "nInserted" : 1 })
+>  db.myCollection.insert({_id:13, name:"Charles"});
+WriteResult({ "nInserted" : 1 })
+>  db.myCollection.insert({_id:14, name:"Edward"});
+WriteResult({ "nInserted" : 1 })
+> db.myCollection.find();
+{ "_id" : 11, "name" : "Alex" }
+{ "_id" : 12, "name" : "Bruce" }
+{ "_id" : 13, "name" : "Charles" }
+{ "_id" : 14, "name" : "Edward" }
+>  db.myCollection.insert({_id:15, name:"Vijay"});
+WriteResult({ "nInserted" : 1 })
+>  db.myCollection.insert({_id:16, name:"Ramesh"});
+WriteResult({ "nInserted" : 1 })
+>  db.myCollection.insert({_id:17, name:"Suraj"});
+WriteResult({ "nInserted" : 1 })
+>  db.myCollection.insert({_id:18, name:"Vikash"});
+WriteResult({ "nInserted" : 1 })
+>  db.myCollection.find();
+{ "_id" : 11, "name" : "Alex" }
+{ "_id" : 12, "name" : "Bruce" }
+{ "_id" : 13, "name" : "Charles" }
+{ "_id" : 14, "name" : "Edward" }
+{ "_id" : 15, "name" : "Vijay" }
+{ "_id" : 16, "name" : "Ramesh" }
+{ "_id" : 17, "name" : "Suraj" }
+{ "_id" : 18, "name" : "Vikash" }
+>  db.myCollection.insert({_id:11, name:"Alex", "age" : 35});
+WriteResult({
+        "nInserted" : 0,
+        "writeError" : {
+                "code" : 11000,
+                "errmsg" : "E11000 duplicate key error collection: mydb.myCollection index: _id_ dup key: { _id: 11.0 }"
+        }
+})
+>  db.myCollection.insert({_id:21, name:"Alex", "age" : 35});
+WriteResult({ "nInserted" : 1 })
+>  db.myCollection.insert({_id:22, name:"Bruce", "age" : 37});
+WriteResult({ "nInserted" : 1 })
+>  db.myCollection.insert({_id:23, name:"Charles", "age" : 39});
+WriteResult({ "nInserted" : 1 })
+>  db.myCollection.insert({_id:24, name:"Edward", "age" : 31});
+WriteResult({ "nInserted" : 1 })
+>  db.myCollection.insert({_id:25, name:"Vijay", "age" : 36});
+WriteResult({ "nInserted" : 1 })
+>  db.myCollection.insert({_id:26, name:"Ramesh", "age" : 32});
+WriteResult({ "nInserted" : 1 })
+>  db.myCollection.insert({_id:27, name:"Suraj", "age" : 67});
+WriteResult({ "nInserted" : 1 })
+>  db.myCollection.insert({_id:28, name:"Vikash", "age" : 19});
+WriteResult({ "nInserted" : 1 })
+>  db.myCollection.insert({_id:29, name:"Ram", "age" : 48});
+WriteResult({ "nInserted" : 1 })
+>  db.myCollection.insert({_id:30, name:"Sachin", "age" : 38});
+WriteResult({ "nInserted" : 1 })
+>  db.myCollection.find();
+{ "_id" : 11, "name" : "Alex" }
+{ "_id" : 12, "name" : "Bruce" }
+{ "_id" : 13, "name" : "Charles" }
+{ "_id" : 14, "name" : "Edward" }
+{ "_id" : 15, "name" : "Vijay" }
+{ "_id" : 16, "name" : "Ramesh" }
+{ "_id" : 17, "name" : "Suraj" }
+{ "_id" : 18, "name" : "Vikash" }
+{ "_id" : 21, "name" : "Alex", "age" : 35 }
+{ "_id" : 22, "name" : "Bruce", "age" : 37 }
+{ "_id" : 23, "name" : "Charles", "age" : 39 }
+{ "_id" : 24, "name" : "Edward", "age" : 31 }
+{ "_id" : 25, "name" : "Vijay", "age" : 36 }
+{ "_id" : 26, "name" : "Ramesh", "age" : 32 }
+{ "_id" : 27, "name" : "Suraj", "age" : 67 }
+{ "_id" : 28, "name" : "Vikash", "age" : 19 }
+{ "_id" : 29, "name" : "Ram", "age" : 48 }
+{ "_id" : 30, "name" : "Sachin", "age" : 38 }
+> db.user.find({age:{$gt:38}});
+> db.myCollection.find({age:{$gt:38}});
+{ "_id" : 23, "name" : "Charles", "age" : 39 }
+{ "_id" : 27, "name" : "Suraj", "age" : 67 }
+{ "_id" : 29, "name" : "Ram", "age" : 48 }
+>  db.myCollection.find({age:{$gt:31}});
+{ "_id" : 21, "name" : "Alex", "age" : 35 }
+{ "_id" : 22, "name" : "Bruce", "age" : 37 }
+{ "_id" : 23, "name" : "Charles", "age" : 39 }
+{ "_id" : 25, "name" : "Vijay", "age" : 36 }
+{ "_id" : 26, "name" : "Ramesh", "age" : 32 }
+{ "_id" : 27, "name" : "Suraj", "age" : 67 }
+{ "_id" : 29, "name" : "Ram", "age" : 48 }
+{ "_id" : 30, "name" : "Sachin", "age" : 38 }
+>  db.myCollection.find({$or:[{age:35}, {"name":"Charles"}]});
+{ "_id" : 13, "name" : "Charles" }
+{ "_id" : 21, "name" : "Alex", "age" : 35 }
+{ "_id" : 23, "name" : "Charles", "age" : 39 }
+> db.myCollection.find({$or:[{age:32}, {"name":"Charles"}]});
+{ "_id" : 13, "name" : "Charles" }
+{ "_id" : 23, "name" : "Charles", "age" : 39 }
+{ "_id" : 26, "name" : "Ramesh", "age" : 32 }
+>  db.myCollection.find({$and:[{name:"Alex"}, {age:"35"}]});
+> db.myCollection.find({$and:[{name:"Alex"}, {age:35}]});
+{ "_id" : 21, "name" : "Alex", "age" : 35 }
+> db.myCollection.find();
+{ "_id" : 11, "name" : "Alex" }
+{ "_id" : 12, "name" : "Bruce" }
+{ "_id" : 13, "name" : "Charles" }
+{ "_id" : 14, "name" : "Edward" }
+{ "_id" : 15, "name" : "Vijay" }
+{ "_id" : 16, "name" : "Ramesh" }
+{ "_id" : 17, "name" : "Suraj" }
+{ "_id" : 18, "name" : "Vikash" }
+{ "_id" : 21, "name" : "Alex", "age" : 35 }
+{ "_id" : 22, "name" : "Bruce", "age" : 37 }
+{ "_id" : 23, "name" : "Charles", "age" : 39 }
+{ "_id" : 24, "name" : "Edward", "age" : 31 }
+{ "_id" : 25, "name" : "Vijay", "age" : 36 }
+{ "_id" : 26, "name" : "Ramesh", "age" : 32 }
+{ "_id" : 27, "name" : "Suraj", "age" : 67 }
+{ "_id" : 28, "name" : "Vikash", "age" : 19 }
+{ "_id" : 29, "name" : "Ram", "age" : 48 }
+{ "_id" : 30, "name" : "Sachin", "age" : 38 }
+>  db.myCollection.find({age:{$in:[36,37,38]}})
+{ "_id" : 22, "name" : "Bruce", "age" : 37 }
+{ "_id" : 25, "name" : "Vijay", "age" : 36 }
+{ "_id" : 30, "name" : "Sachin", "age" : 38 }
+> db.myCollection.deleteOne({age:36});
+{ "acknowledged" : true, "deletedCount" : 1 }
+>  db.myCollection.find();
+{ "_id" : 11, "name" : "Alex" }
+{ "_id" : 12, "name" : "Bruce" }
+{ "_id" : 13, "name" : "Charles" }
+{ "_id" : 14, "name" : "Edward" }
+{ "_id" : 15, "name" : "Vijay" }
+{ "_id" : 16, "name" : "Ramesh" }
+{ "_id" : 17, "name" : "Suraj" }
+{ "_id" : 18, "name" : "Vikash" }
+{ "_id" : 21, "name" : "Alex", "age" : 35 }
+{ "_id" : 22, "name" : "Bruce", "age" : 37 }
+{ "_id" : 23, "name" : "Charles", "age" : 39 }
+{ "_id" : 24, "name" : "Edward", "age" : 31 }
+{ "_id" : 26, "name" : "Ramesh", "age" : 32 }
+{ "_id" : 27, "name" : "Suraj", "age" : 67 }
+{ "_id" : 28, "name" : "Vikash", "age" : 19 }
+{ "_id" : 29, "name" : "Ram", "age" : 48 }
+{ "_id" : 30, "name" : "Sachin", "age" : 38 }
+> db.mycollection.updateOne({age:36}, {$set:{name:"Vijay"}});
+{ "acknowledged" : true, "matchedCount" : 0, "modifiedCount" : 0 }
+> db.myCollection.find();
+{ "_id" : 11, "name" : "Alex" }
+{ "_id" : 12, "name" : "Bruce" }
+{ "_id" : 13, "name" : "Charles" }
+{ "_id" : 14, "name" : "Edward" }
+{ "_id" : 15, "name" : "Vijay" }
+{ "_id" : 16, "name" : "Ramesh" }
+{ "_id" : 17, "name" : "Suraj" }
+{ "_id" : 18, "name" : "Vikash" }
+{ "_id" : 21, "name" : "Alex", "age" : 35 }
+{ "_id" : 22, "name" : "Bruce", "age" : 37 }
+{ "_id" : 23, "name" : "Charles", "age" : 39 }
+{ "_id" : 24, "name" : "Edward", "age" : 31 }
+{ "_id" : 26, "name" : "Ramesh", "age" : 32 }
+{ "_id" : 27, "name" : "Suraj", "age" : 67 }
+{ "_id" : 28, "name" : "Vikash", "age" : 19 }
+{ "_id" : 29, "name" : "Ram", "age" : 48 }
+{ "_id" : 30, "name" : "Sachin", "age" : 38 }
+>  db.myCollection.updateOne({age:36}, {$set:{name:"Vijay"}});
+{ "acknowledged" : true, "matchedCount" : 0, "modifiedCount" : 0 }
+>  db.myCollection.updateOne({age:42}, {$set:{name:"Mohan"}});
+{ "acknowledged" : true, "matchedCount" : 0, "modifiedCount" : 0 }
+> db.myCollection.find();
+{ "_id" : 11, "name" : "Alex" }
+{ "_id" : 12, "name" : "Bruce" }
+{ "_id" : 13, "name" : "Charles" }
+{ "_id" : 14, "name" : "Edward" }
+{ "_id" : 15, "name" : "Vijay" }
+{ "_id" : 16, "name" : "Ramesh" }
+{ "_id" : 17, "name" : "Suraj" }
+{ "_id" : 18, "name" : "Vikash" }
+{ "_id" : 21, "name" : "Alex", "age" : 35 }
+{ "_id" : 22, "name" : "Bruce", "age" : 37 }
+{ "_id" : 23, "name" : "Charles", "age" : 39 }
+{ "_id" : 24, "name" : "Edward", "age" : 31 }
+{ "_id" : 26, "name" : "Ramesh", "age" : 32 }
+{ "_id" : 27, "name" : "Suraj", "age" : 67 }
+{ "_id" : 28, "name" : "Vikash", "age" : 19 }
+{ "_id" : 29, "name" : "Ram", "age" : 48 }
+{ "_id" : 30, "name" : "Sachin", "age" : 38 }
+>  db.myCollection.find().pretty();
+{ "_id" : 11, "name" : "Alex" }
+{ "_id" : 12, "name" : "Bruce" }
+{ "_id" : 13, "name" : "Charles" }
+{ "_id" : 14, "name" : "Edward" }
+{ "_id" : 15, "name" : "Vijay" }
+{ "_id" : 16, "name" : "Ramesh" }
+{ "_id" : 17, "name" : "Suraj" }
+{ "_id" : 18, "name" : "Vikash" }
+{ "_id" : 21, "name" : "Alex", "age" : 35 }
+{ "_id" : 22, "name" : "Bruce", "age" : 37 }
+{ "_id" : 23, "name" : "Charles", "age" : 39 }
+{ "_id" : 24, "name" : "Edward", "age" : 31 }
+{ "_id" : 26, "name" : "Ramesh", "age" : 32 }
+{ "_id" : 27, "name" : "Suraj", "age" : 67 }
+{ "_id" : 28, "name" : "Vikash", "age" : 19 }
+{ "_id" : 29, "name" : "Ram", "age" : 48 }
+{ "_id" : 30, "name" : "Sachin", "age" : 38 }
+>  db.myCollection.find({age:48});
+{ "_id" : 29, "name" : "Ram", "age" : 48 }
+>   db.myCollection.find({},{age:1});
+{ "_id" : 11 }
+{ "_id" : 12 }
+{ "_id" : 13 }
+{ "_id" : 14 }
+{ "_id" : 15 }
+{ "_id" : 16 }
+{ "_id" : 17 }
+{ "_id" : 18 }
+{ "_id" : 21, "age" : 35 }
+{ "_id" : 22, "age" : 37 }
+{ "_id" : 23, "age" : 39 }
+{ "_id" : 24, "age" : 31 }
+{ "_id" : 26, "age" : 32 }
+{ "_id" : 27, "age" : 67 }
+{ "_id" : 28, "age" : 19 }
+{ "_id" : 29, "age" : 48 }
+{ "_id" : 30, "age" : 38 }
+> var x=30;
+> var y=20;
+> var z=x+y;
+> z;
+50
+> new Date();
+ISODate("2022-03-22T11:09:27.468Z")
+>  new Date().toLocaleDataString();
+uncaught exception: TypeError: (new Date(...)).toLocaleDataString is not a function :
+@(shell):1:1
+> new Date().toLocaleDateString();
+Tuesday, March 22, 2022
+> db.mycollection.find().sort({name:1});
+>  db.myCollection.find().sort({name:1});
+{ "_id" : 11, "name" : "Alex" }
+{ "_id" : 21, "name" : "Alex", "age" : 35 }
+{ "_id" : 12, "name" : "Bruce" }
+{ "_id" : 22, "name" : "Bruce", "age" : 37 }
+{ "_id" : 13, "name" : "Charles" }
+{ "_id" : 23, "name" : "Charles", "age" : 39 }
+{ "_id" : 14, "name" : "Edward" }
+{ "_id" : 24, "name" : "Edward", "age" : 31 }
+{ "_id" : 29, "name" : "Ram", "age" : 48 }
+{ "_id" : 16, "name" : "Ramesh" }
+{ "_id" : 26, "name" : "Ramesh", "age" : 32 }
+{ "_id" : 30, "name" : "Sachin", "age" : 38 }
+{ "_id" : 17, "name" : "Suraj" }
+{ "_id" : 27, "name" : "Suraj", "age" : 67 }
+{ "_id" : 15, "name" : "Vijay" }
+{ "_id" : 18, "name" : "Vikash" }
+{ "_id" : 28, "name" : "Vikash", "age" : 19 }
+>  db.mycollection.find().sort({name:-1});
+> db.myCollection.find().sort({name:-1});
+{ "_id" : 18, "name" : "Vikash" }
+{ "_id" : 28, "name" : "Vikash", "age" : 19 }
+{ "_id" : 15, "name" : "Vijay" }
+{ "_id" : 17, "name" : "Suraj" }
+{ "_id" : 27, "name" : "Suraj", "age" : 67 }
+{ "_id" : 30, "name" : "Sachin", "age" : 38 }
+{ "_id" : 16, "name" : "Ramesh" }
+{ "_id" : 26, "name" : "Ramesh", "age" : 32 }
+{ "_id" : 29, "name" : "Ram", "age" : 48 }
+{ "_id" : 14, "name" : "Edward" }
+{ "_id" : 24, "name" : "Edward", "age" : 31 }
+{ "_id" : 13, "name" : "Charles" }
+{ "_id" : 23, "name" : "Charles", "age" : 39 }
+{ "_id" : 12, "name" : "Bruce" }
+{ "_id" : 22, "name" : "Bruce", "age" : 37 }
+{ "_id" : 11, "name" : "Alex" }
+{ "_id" : 21, "name" : "Alex", "age" : 35 }
+> db.myCollection.find().limit(2);
+{ "_id" : 11, "name" : "Alex" }
+{ "_id" : 12, "name" : "Bruce" }
+>
+
