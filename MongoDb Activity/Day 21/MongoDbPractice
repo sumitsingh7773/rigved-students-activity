@@ -7,6 +7,7 @@ switched to db mydb
 { "ok" : 1 }
 > use mydb;
 switched to db mydb
+
 > show collections;
 emp
 user
