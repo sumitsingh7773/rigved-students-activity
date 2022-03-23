@@ -1,0 +1,38 @@
+> db.createCollection("UnivRecord");
+{ "ok" : 1 }
+> db.UnivRecord.insert({_id: "Student_id", table_count : 0});
+WriteResult({ "nInserted" : 1 })
+> function getValue1(sequenceValue1) {
+...  let sequence = db.UnivRecord.findAndModify({
+...  query: {_id: sequenceValue1},
+...  update: {$inc: {table_count: 1}},
+...  new: true
+...   });
+...  return "s1" + sequence.table_count;
+... }
+>  db.UnivRecord.find();
+{ "_id" : "Student_id", "table_count" : 0 }
+>  db.UnivRecord.insert({"_id": getValue1("Student_id"), "name": "Nikhil","age": 25,"University_Name": "Mumbai University","Course":"B.tech"});
+WriteResult({ "nInserted" : 1 })
+>  db.UnivRecord.insert({"_id": getValue1("Student_id"), "name": "Vikash","age": 23,"University_Name": "Delhi University","Course":"B.tech"});
+WriteResult({ "nInserted" : 1 })
+>  db.UnivRecord.insert({"_id": getValue1("Student_id"), "name": "Saurabh","age": 24,"University_Name": "Patna University","Course":"BCA"});
+WriteResult({ "nInserted" : 1 })
+>  db.UnivRecord.insert({"_id": getValue1("Student_id"), "name": "Sumit","age": 25,"University_Name": "BRABU","Course":"MCA"});
+WriteResult({ "nInserted" : 1 })
+>  db.UnivRecord.insert({"_id": getValue1("Student_id"), "name": "Nitesh","age": 26,"University_Name": "Mumbai University","Course":"B.sc"});
+WriteResult({ "nInserted" : 1 })
+>  db.UnivRecord.insert({"_id": getValue1("Student_id"), "name": "Anchit","age": 25,"University_Name": "Delhi University ","Course":"M.tech"});
+WriteResult({ "nInserted" : 1 })
+> db.UnivRecord.insert({"_id": getValue1("Student_id"), "name": "Amit","age": 27,"University_Name": "Delhi University ","Course":"M.sc"});
+WriteResult({ "nInserted" : 1 })
+> db.UnivRecord.find();
+{ "_id" : "Student_id", "table_count" : 7 }
+{ "_id" : "s11", "name" : "Nikhil", "age" : 25, "University_Name" : "Mumbai University", "Course" : "B.tech" }
+{ "_id" : "s12", "name" : "Vikash", "age" : 23, "University_Name" : "Delhi University", "Course" : "B.tech" }
+{ "_id" : "s13", "name" : "Saurabh", "age" : 24, "University_Name" : "Patna University", "Course" : "BCA" }
+{ "_id" : "s14", "name" : "Sumit", "age" : 25, "University_Name" : "BRABU", "Course" : "MCA" }
+{ "_id" : "s15", "name" : "Nitesh", "age" : 26, "University_Name" : "Mumbai University", "Course" : "B.sc" }
+{ "_id" : "s16", "name" : "Anchit", "age" : 25, "University_Name" : "Delhi University ", "Course" : "M.tech" }
+{ "_id" : "s17", "name" : "Amit", "age" : 27, "University_Name" : "Delhi University ", "Course" : "M.sc" }
+>

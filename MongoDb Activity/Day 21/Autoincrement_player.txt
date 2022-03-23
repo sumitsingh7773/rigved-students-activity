@@ -1,0 +1,44 @@
+---
+> show databases;
+EMPLOYEES  0.000GB
+admin      0.000GB
+config     0.000GB
+local      0.000GB
+mydb       0.000GB
+> show collections;
+> use mydb;
+switched to db mydb
+@(shell):1:1
+> db.createCollection("autoincrement");
+{ "ok" : 1 }
+>  db.autoincrement.insert({_id: "P_id", table_value : 0});
+WriteResult({ "nInserted" : 1 })
+>  function getValue(sequenceValue) {
+...  let sequence = db.autoincrement.findAndModify({
+...  query: {_id: sequenceValue},
+...  update: {$inc: {table_value: 01}},
+... new: true
+...  });
+...  return sequence.table_value;
+... }
+>  db.autoincrement.insert({"_id": getValue("P_id"), "Player_name": "Sachin Tendulkar", "age": 35, "Sports_name": "Cricket"});
+WriteResult({ "nInserted" : 1 })
+> db.autoincrement.insert({"_id": getValue("P_id"), "Player_name": "Ms Dhoni", "age": 32, "Sports_name": "Cricket"});
+WriteResult({ "nInserted" : 1 })
+> db.autoincrement.insert({"_id": getValue("P_id"), "Player_name": "Rohit Sharma", "age": 33, "Sports_name": "Cricket"});
+WriteResult({ "nInserted" : 1 })
+> db.autoincrement.insert({"_id": getValue("P_id"), "Player_name": "Alex", "age": 31, "Sports_name": "Football"});
+WriteResult({ "nInserted" : 1 })
+> db.autoincrement.insert({"_id": getValue("P_id"), "Player_name": "Bruce", "age": 34, "Sports_name": "Hockey"});
+WriteResult({ "nInserted" : 1 })
+> db.autoincrement.insert({"_id": getValue("P_id"), "Player_name": "Edward", "age": 42, "Sports_name": "Chess"});
+WriteResult({ "nInserted" : 1 })
+>  db.autoincrement.find();
+{ "_id" : "P_id", "table_value" : 6 }
+{ "_id" : 1, "Player_name" : "Sachin Tendulkar", "age" : 35, "Sports_name" : "Cricket" }
+{ "_id" : 2, "Player_name" : "Ms Dhoni", "age" : 32, "Sports_name" : "Cricket" }
+{ "_id" : 3, "Player_name" : "Rohit Sharma", "age" : 33, "Sports_name" : "Cricket" }
+{ "_id" : 4, "Player_name" : "Alex", "age" : 31, "Sports_name" : "Football" }
+{ "_id" : 5, "Player_name" : "Bruce", "age" : 34, "Sports_name" : "Hockey" }
+{ "_id" : 6, "Player_name" : "Edward", "age" : 42, "Sports_name" : "Chess" }
+>
