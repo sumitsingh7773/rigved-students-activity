@@ -1,0 +1,349 @@
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex1.js
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex1.js
+Hello World
+Hello Alexandar
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex2asynch.js
+z = 535
+end of program
+inside callback
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22> node ex3latestEs.js
+Result = 748
+Min value is: -4
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex3latestEs.js
+Result = 748
+Min value is: -8
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>npm i readline-sync
+
+added 1 package, and audited 2 packages in 4s
+
+found 0 vulnerabilities
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex4require.js
+Str is: Welcome to node
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex10writesync.js
+Done...
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex10writesync.js
+Done...
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>ex4msg.js
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex5exports.js
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>ex5require.js
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex5require.js
+Result = 10
+Min = -5
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex5require.js
+Result = 124
+Min = -9
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex6os.js
+Arch: x64
+Platform: win32
+Release: 10.0.19044
+Hostname: DESKTOP-3SK3B87
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex7readline.js
+Enter you name: Sumit
+Enter your age: 24
+Hello Sumit, your age is 24
+Enter a number: 26
+Enter another number: 29
+Result = 55
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex7readline.js
+Enter you name: Sumit kumar
+Enter your age: 25
+Enter your course: MCA
+Hello Sumit kumar, your age is 25,Course is MCA
+Enter a number: 32
+Enter another number: 23
+Result = 55
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex7readline.js
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22\ex7readline.js:15
+console.log(`Result = ${result1, ${result2}, ${result3},${result4}`);
+                        ^^^^^^^^^^
+
+SyntaxError: Missing } in template expression
+←[90m    at Object.compileFunction (node:vm:352:18)←[39m
+←[90m    at wrapSafe (node:internal/modules/cjs/loader:1032:15)←[39m
+←[90m    at Module._compile (node:internal/modules/cjs/loader:1067:27)←[39m
+←[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)←[39m
+←[90m    at Module.load (node:internal/modules/cjs/loader:981:32)←[39m
+←[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)←[39m
+←[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)←[39m
+←[90m    at node:internal/main/run_main_module:17:47←[39m
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex7readline.js
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22\ex7readline.js:15
+console.log(`Result = ${result1, ${result2}, ${result3},${result4}`);
+                        ^^^^^^^^^^
+
+SyntaxError: Missing } in template expression
+←[90m    at Object.compileFunction (node:vm:352:18)←[39m
+←[90m    at wrapSafe (node:internal/modules/cjs/loader:1032:15)←[39m
+←[90m    at Module._compile (node:internal/modules/cjs/loader:1067:27)←[39m
+←[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)←[39m
+←[90m    at Module.load (node:internal/modules/cjs/loader:981:32)←[39m
+←[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)←[39m
+←[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)←[39m
+←[90m    at node:internal/main/run_main_module:17:47←[39m
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex7readline.js
+Enter you name: Sumit kumar
+Enter your age: 26
+Enter your course: MCA
+Hello Sumit kumar, your age is 26,Course is MCA
+Enter a number: 25
+Enter another number: 23
+Result = 48, 2, 575,1.0869565217391304
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex8readsync.js
+Hello everyone!
+Hope all are fine.
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex9users-readsync.js
+Name: Edward, Age: 33, Gender: Male,Salary:undefined
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex9users-readsync.js
+Id:Edward,Name: 33, Age: Male, Gender: undefined,Salary:undefined
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex9users-readsync.js
+Id:Id 1,Name: Nikhil, Age: 33, Gender: Male,Salary:35000
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex9users-readsync.js
+Id: 1,Name: Nikhil, Age: 33, Gender: Male,Salary:35000
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex9users-readsync.js
+Id: 1,Name: Nikhil, Age: 28, Gender: Male,Salary:35000
+ 2
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex9users-readsync.js
+Id: 1,Name: Nikhil, Age: 28, Gender: Male,Salary:35000
+ 2
+Id: 1,Name: Nikhil, Age: 28, Gender: Male,Salary:35000
+ 2
+Id: 1,Name: Nikhil, Age: 28, Gender: Male,Salary:35000
+ 2
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex9users-readsync.js
+Id: 1,Name: Nikhil, Age: 28, Gender: Male,Salary:35000
+ 2
+Id: 1,Name: Nikhil, Age: 28, Gender: Male,Salary:35000
+ 2
+Id: 1,Name: Nikhil, Age: 28, Gender: Male,Salary:35000
+ 2
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex9users-readsync.js
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22\ex9users-readsync.js:7
+let [id,name, age, gender,salary] = AlluserItems;
+                                    ^
+
+ReferenceError: AlluserItems is not defined
+    at Object.<anonymous> (D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22\ex9users-readsync.js:7:37)
+←[90m    at Module._compile (node:internal/modules/cjs/loader:1103:14)←[39m
+←[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)←[39m
+←[90m    at Module.load (node:internal/modules/cjs/loader:981:32)←[39m
+←[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)←[39m
+←[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)←[39m
+←[90m    at node:internal/main/run_main_module:17:47←[39m
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex9users-readsync.js
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22\ex9users-readsync.js:7
+let [id,name, age, gender,salary] = AlluserItems;
+                                    ^
+
+ReferenceError: AlluserItems is not defined
+    at Object.<anonymous> (D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22\ex9users-readsync.js:7:37)
+←[90m    at Module._compile (node:internal/modules/cjs/loader:1103:14)←[39m
+←[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)←[39m
+←[90m    at Module.load (node:internal/modules/cjs/loader:981:32)←[39m
+←[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)←[39m
+←[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)←[39m
+←[90m    at node:internal/main/run_main_module:17:47←[39m
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex9users-readsync.js
+Id: 1,Name: Nikhil, Age: 28, Gender: Male,Salary:35000
+ 2
+Id: 1,Name: Nikhil, Age: 28, Gender: Male,Salary:35000
+ 2
+Id: 1,Name: Nikhil, Age: 28, Gender: Male,Salary:35000
+ 2
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex9users-readsync.js
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22\ex9users-readsync.js:8
+console.log(`Id:${},Name: ${name}, Age: ${age}, Gender: ${gender},Salary:${salary}`);
+                  ^
+
+SyntaxError: Unexpected token '}'
+←[90m    at Object.compileFunction (node:vm:352:18)←[39m
+←[90m    at wrapSafe (node:internal/modules/cjs/loader:1032:15)←[39m
+←[90m    at Module._compile (node:internal/modules/cjs/loader:1067:27)←[39m
+←[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)←[39m
+←[90m    at Module.load (node:internal/modules/cjs/loader:981:32)←[39m
+←[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)←[39m
+←[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)←[39m
+←[90m    at node:internal/main/run_main_module:17:47←[39m
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex9users-readsync.js
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22\ex9users-readsync.js:8
+console.log(`Id:${},Name: ${name}, Age: ${age}, Gender: ${gender},Salary:${salary}`);
+                  ^
+
+SyntaxError: Unexpected token '}'
+←[90m    at Object.compileFunction (node:vm:352:18)←[39m
+←[90m    at wrapSafe (node:internal/modules/cjs/loader:1032:15)←[39m
+←[90m    at Module._compile (node:internal/modules/cjs/loader:1067:27)←[39m
+←[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)←[39m
+←[90m    at Module.load (node:internal/modules/cjs/loader:981:32)←[39m
+←[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)←[39m
+←[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)←[39m
+←[90m    at node:internal/main/run_main_module:17:47←[39m
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex9users-readsync.js
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22\ex9users-readsync.js:8
+console.log(`Id:${},Name: ${name}, Age: ${age}, Gender: ${gender},Salary:${salary}`);
+                  ^
+
+SyntaxError: Unexpected token '}'
+←[90m    at Object.compileFunction (node:vm:352:18)←[39m
+←[90m    at wrapSafe (node:internal/modules/cjs/loader:1032:15)←[39m
+←[90m    at Module._compile (node:internal/modules/cjs/loader:1067:27)←[39m
+←[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)←[39m
+←[90m    at Module.load (node:internal/modules/cjs/loader:981:32)←[39m
+←[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)←[39m
+←[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)←[39m
+←[90m    at node:internal/main/run_main_module:17:47←[39m
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex9users-readsync.js
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22\ex9users-readsync.js:9
+console.log(`Id:${},Name: ${name}, Age: ${age}, Gender: ${gender},Salary:${salary}`);
+                  ^
+
+SyntaxError: Unexpected token '}'
+←[90m    at Object.compileFunction (node:vm:352:18)←[39m
+←[90m    at wrapSafe (node:internal/modules/cjs/loader:1032:15)←[39m
+←[90m    at Module._compile (node:internal/modules/cjs/loader:1067:27)←[39m
+←[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)←[39m
+←[90m    at Module.load (node:internal/modules/cjs/loader:981:32)←[39m
+←[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)←[39m
+←[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)←[39m
+←[90m    at node:internal/main/run_main_module:17:47←[39m
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex9users-readsync.js
+Id: 1,Name: Nikhil, Age: 28, Gender: Male,Salary:35000
+ 2
+Id: 1,Name: Nikhil, Age: 28, Gender: Male,Salary:35000
+ 2
+Id: 1,Name: Nikhil, Age: 28, Gender: Male,Salary:35000
+ 2
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex11jsontojs.js
+node:internal/modules/cjs/loader:936
+  throw err;
+  ^
+
+Error: Cannot find module 'D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22\ex11jsontojs.js'
+←[90m    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)←[39m
+←[90m    at Function.Module._load (node:internal/modules/cjs/loader:778:27)←[39m
+←[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)←[39m
+←[90m    at node:internal/main/run_main_module:17:47←[39m {
+  code: ←[32m'MODULE_NOT_FOUND'←[39m,
+  requireStack: []
+}
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex11jstojson.js
+{ id: 3, name: 'Alex', salary: 35000 }
+{"id":3,"name":"Alex","salary":35000}
+done...
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex11jstojson.js
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22\ex11jstojson.js:4
+ id:4, name:"Bruce", salary:33000};
+ ^^
+
+SyntaxError: Unexpected identifier
+←[90m    at Object.compileFunction (node:vm:352:18)←[39m
+←[90m    at wrapSafe (node:internal/modules/cjs/loader:1032:15)←[39m
+←[90m    at Module._compile (node:internal/modules/cjs/loader:1067:27)←[39m
+←[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)←[39m
+←[90m    at Module.load (node:internal/modules/cjs/loader:981:32)←[39m
+←[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)←[39m
+←[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)←[39m
+←[90m    at node:internal/main/run_main_module:17:47←[39m
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex11jstojson.js
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22\ex11jstojson.js:4
+ id:4, name:"Bruce", salary:33000};
+ ^^
+
+SyntaxError: Unexpected identifier
+←[90m    at Object.compileFunction (node:vm:352:18)←[39m
+←[90m    at wrapSafe (node:internal/modules/cjs/loader:1032:15)←[39m
+←[90m    at Module._compile (node:internal/modules/cjs/loader:1067:27)←[39m
+←[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)←[39m
+←[90m    at Module.load (node:internal/modules/cjs/loader:981:32)←[39m
+←[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)←[39m
+←[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)←[39m
+←[90m    at node:internal/main/run_main_module:17:47←[39m
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex11jstojson.js
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22\ex11jstojson.js:4
+ id:4, name:"Bruce", salary:33000};
+ ^^
+
+SyntaxError: Unexpected identifier
+←[90m    at Object.compileFunction (node:vm:352:18)←[39m
+←[90m    at wrapSafe (node:internal/modules/cjs/loader:1032:15)←[39m
+←[90m    at Module._compile (node:internal/modules/cjs/loader:1067:27)←[39m
+←[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)←[39m
+←[90m    at Module.load (node:internal/modules/cjs/loader:981:32)←[39m
+←[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)←[39m
+←[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)←[39m
+←[90m    at node:internal/main/run_main_module:17:47←[39m
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex12jsontojs.js
+undefined:2
+{"id":4,"name":"Bruce","salary":33000}
+^
+
+SyntaxError: Unexpected token { in JSON at position 39
+    at JSON.parse (<anonymous>)
+    at Object.<anonymous> (D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22\ex12jsontojs.js:4:21)
+←[90m    at Module._compile (node:internal/modules/cjs/loader:1103:14)←[39m
+←[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)←[39m
+←[90m    at Module.load (node:internal/modules/cjs/loader:981:32)←[39m
+←[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)←[39m
+←[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)←[39m
+←[90m    at node:internal/main/run_main_module:17:47←[39m
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node ex12jsontojs.js
+{"id":3,"name":"Alex","salary":35000}
+
+{ id: 3, name: 'Alex', salary: 35000 }
+Id = 3, Name = Alex, Salary = 35000
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node Emp1.js
+Enter EmpId: 1
+Enter name: Sumit kumar
+Enter age: 24
+Enter salary: 25000
+Hello 1, your Name is Sumit kumar,your Age is 24,your Salary is25000
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day22>node Emp1.js
+Enter EmpId: 2
+Enter name: Sumit kumar
+Enter age: 25
+Enter salary: 25000
+ Hello EmpId 2, your Name is Sumit kumar,your Age is 25,your Salary is25000
