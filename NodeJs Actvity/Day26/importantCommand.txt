@@ -1,0 +1,49 @@
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day26>npm i -g nodemon
+
+changed 116 packages, and audited 117 packages in 59s
+
+16 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day26>npm i express
+
+added 50 packages, and audited 51 packages in 8s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day26>npm install body-parser
+
+up to date, audited 51 packages in 3s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day26>npm init -fy
+npm WARN using --force Recommended protections disabled.
+Wrote to D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day26\package.json:
+
+{
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3"
+  },
+  "name": "day26",
+  "version": "1.0.0",
+  "main": "Example1A.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

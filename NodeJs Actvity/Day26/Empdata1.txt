@@ -1,0 +1,39 @@
+---
+> show databases;
+EMPLOYEES  0.000GB
+admin      0.000GB
+config     0.000GB
+local      0.000GB
+mydb       0.000GB
+> use EMPLOYEES;
+switched to db EMPLOYEES
+> show collections;
+EMPLOYEE
+Empdata1
+employee
+>  use EMPLOYEES;
+switched to db EMPLOYEES
+> db.Empdata1.insert({"_id":101,"Name":"Sumit","Salary":20000,Address:{"state":"KA", "city":"BLR", "pin":560001}});
+WriteResult({ "nInserted" : 1 })
+>  db.Empdata1.insert({"_id":102,"Name":"Saurabh","Salary":25000,Address:{"state":"MH", "city":"MBI", "pin":588001}});
+WriteResult({ "nInserted" : 1 })
+>  db.Empdata1.insert({"_id":103,"Name":"Vikash","Salary":27000,Address:{"state":"GJ", "city":"GRT", "pin":590890}});
+WriteResult({ "nInserted" : 1 })
+>  db.Empdata1.insert({"_id":104,"Name":"Nikhil","Salary":30000,Address:{"state":"UP", "city":"LNW", "pin":823001}});
+WriteResult({ "nInserted" : 1 })
+>  db.Empdata1.insert({"_id":105,"Name":"Nitesh","Salary":26000,Address:{"state":"BR", "city":"PTA", "pin":842001}});
+WriteResult({ "nInserted" : 1 })
+>  db.Empdata1.insert({"_id":106,"Name":"Anchit","Salary":50000,Address:{"state":"KL", "city":"KTA", "pin":990001}});
+WriteResult({ "nInserted" : 1 })
+>  db.Empdata1.insert({"_id":107,"Name":"Rupesh","Salary":34000,Address:{"state":"DL", "city":"DLI", "pin":569001}});
+WriteResult({ "nInserted" : 1 })
+> db.Empdata1.find();
+{ "_id" : 101, "Name" : "Sumit", "Salary" : 20000, "Address" : { "state" : "KA", "city" : "BLR", "pin" : 560001 } }
+{ "_id" : 102, "Name" : "Saurabh", "Salary" : 25000, "Address" : { "state" : "MH", "city" : "MBI", "pin" : 588001 } }
+{ "_id" : 103, "Name" : "Vikash", "Salary" : 27000, "Address" : { "state" : "GJ", "city" : "GRT", "pin" : 590890 } }
+{ "_id" : 104, "Name" : "Nikhil", "Salary" : 30000, "Address" : { "state" : "UP", "city" : "LNW", "pin" : 823001 } }
+{ "_id" : 105, "Name" : "Nitesh", "Salary" : 26000, "Address" : { "state" : "BR", "city" : "PTA", "pin" : 842001 } }
+{ "_id" : 106, "Name" : "Anchit", "Salary" : 50000, "Address" : { "state" : "KL", "city" : "KTA", "pin" : 990001 } }
+{ "_id" : 107, "Name" : "Rupesh", "Salary" : 34000, "Address" : { "state" : "DL", "city" : "DLI", "pin" : 569001 } }
+>
+

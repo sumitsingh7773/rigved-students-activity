@@ -1,0 +1,81 @@
+[
+    {
+        "_id": 101,
+        "Name": "Sumit",
+        "Salary": 24000,
+        "Address": {
+            "state": "KA",
+            "city": "BLR",
+            "pin": 560001
+        }
+    },
+    {
+        "_id": 102,
+        "Name": "Saurabh",
+        "Salary": 25000,
+        "Address": {
+            "state": "MH",
+            "city": "MBI",
+            "pin": 588001
+        }
+    },
+    {
+        "_id": 103,
+        "Name": "Vikash",
+        "Salary": 27000,
+        "Address": {
+            "state": "GJ",
+            "city": "GRT",
+            "pin": 590890
+        }
+    },
+    {
+        "_id": 104,
+        "Name": "Nikhil",
+        "Salary": 30000,
+        "Address": {
+            "state": "UP",
+            "city": "LNW",
+            "pin": 823001
+        }
+    },
+    {
+        "_id": 105,
+        "Name": "Nitesh",
+        "Salary": 26000,
+        "Address": {
+            "state": "BR",
+            "city": "PTA",
+            "pin": 842001
+        }
+    },
+    {
+        "_id": 106,
+        "Name": "Anchit",
+        "Salary": 50000,
+        "Address": {
+            "state": "KL",
+            "city": "KTA",
+            "pin": 990001
+        }
+    },
+    {
+        "_id": 107,
+        "Name": "Rupesh",
+        "Salary": 34000,
+        "Address": {
+            "state": "DL",
+            "city": "DLI",
+            "pin": 569001
+        }
+    },
+    {
+        "_id": "624308ee1f69aeb5bdf0b837"
+    },
+    {
+        "_id": "624309731f69aeb5bdf0b838"
+    },
+    {
+        "_id": "6243097a1f69aeb5bdf0b839"
+    }
+]
