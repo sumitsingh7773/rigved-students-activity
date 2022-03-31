@@ -1,0 +1,23 @@
+<!doctype html>
+  <html>
+   <head>
+    <title>MyChat Application</title>
+    <link rel='stylesheet' href='style.css' type='text/css'/>
+    <script src = "/socket.io/socket.io.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="chat.js"></script>
+  </head>
+  <body> 
+    <h2>MyChat Application</h2>
+    <ul id="messages"></ul>
+    <span id="notifyUser"></span>
+    <form id="form" action="" onsubmit="  submitfunction();" > 
+      <input type="hidden" id="user" value="" /><input id="m" autocomplete="off" onkeyup="notifyTyping();" placeholder="Type message here.." /><input type="submit" id="button" value="Send"/> 
+      <footer>
+        <p> MyChatApp ©2022 Devloped By: Sumit Singh<br>
+        <a href="sumitsingh7773@gmail.com">sumitsingh7773@gmail.com </a></p>
+      </footer>
+      
+    </form>
+  </body>
+</html>

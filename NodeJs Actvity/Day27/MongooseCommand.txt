@@ -1,0 +1,69 @@
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day27>npm i -g nodemon
+
+changed 116 packages, and audited 117 packages in 25s
+
+16 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day27>npm i express
+
+added 50 packages, and audited 51 packages in 6s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day27>npm install body-parser
+
+up to date, audited 51 packages in 2s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day27>npm init -fy
+npm WARN using --force Recommended protections disabled.
+Wrote to D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day27\package.json:
+
+{
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3"
+  },
+  "name": "day27",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
+
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day27>npm install express body-parser mongoose --save
+
+added 28 packages, and audited 79 packages in 10s
+
+6 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+D:\MeanStack Example\rigved-students-activity\NodeJs Actvity\Day27>npm install socket.io express --save
+
+added 20 packages, and audited 99 packages in 7s
+
+6 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
