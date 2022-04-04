@@ -1,0 +1,23 @@
+<div class="container"><h2>User Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">Name</th>
+                <th rowspan="2">Gender</th>
+                <th colspan="2">Address</th>            
+            </tr>
+            <tr>
+                <th> state </th>
+                <th>city</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let user of users'>
+                <td>{{user.name | CustomPipe:user.gender }}</td>
+                <td>{{user.gender | lowercase}}</td>
+                <td>{{user.address.state}}</td>
+                <td>{{user.address.city}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
