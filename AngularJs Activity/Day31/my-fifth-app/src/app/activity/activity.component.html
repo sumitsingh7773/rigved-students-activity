@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="col align-item-start">
+        <div class="col">
+            <h3>Firstname : <input type="text" #first></h3><br/>
+             <h4>Lastname : <input type="text" #second></h4><br/>
+    <button (click)="save(first.value,second.value)"><b>SUBMIT</b></button>
+</div>
+<div class="col">
+    <table class="table table-striped">
+ <thead>
+            <tr>
+            <td><h3>First Name</h3></td>
+            <td><h3>Last Name</h3></td>
+            </tr>
+</thead>
+      <tbody>
+            <tr *ngFor="let data of array">
+                <td>{{data.fn}}</td>
+                <td>{{data.ln}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
