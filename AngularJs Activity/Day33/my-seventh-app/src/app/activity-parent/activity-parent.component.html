@@ -1,0 +1,6 @@
+<div class="container">
+    <h1>Product Card Details</h1>
+    <h1>Cart Size: {{num}}</h1>
+    <h1>Total Amount: {{p2}}</h1>
+    <app-activity-child (data)="num = $event"  (price1)="p2 = $event"></app-activity-child>
+</div>
