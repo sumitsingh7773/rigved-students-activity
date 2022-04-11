@@ -1,0 +1,17 @@
+<div>
+    <h2>Reactive Form!</h2>
+    <label>
+        Firstname: <input [formControl] = "firstname">
+    </label><br/>
+    <label>
+        Lastname: <input [formControl] = "lastname">
+    </label>
+    <hr />
+   
+    <div>
+        firstname: {{firstname.value}}
+    </div> 
+    <div>
+        lastname: {{lastname.value}}
+    </div>
+</div>
