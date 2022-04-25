@@ -1,0 +1,21 @@
+<div>
+    <h2>Find All Users</h2>
+    <button (click)="handleClick()">Refresh</button>
+    <div>
+        <table *ngIf="users" class="table table-sthiped">
+            <thead>
+                <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let u of users">
+                    <td>{{u._id}}</td>
+                    <td>{{u.name}}</td>
+                    <td>{{u.age}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

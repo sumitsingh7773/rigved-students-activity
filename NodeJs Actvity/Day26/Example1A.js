@@ -20,8 +20,8 @@ app.get("/users", (request, response) => {
     mongoClient.connect(dbURL, {useNewUrlParser:true}, (error, client) => {
         if(error) 
             throw error;
-        let db = client.db("EMPLOYEES");
-        let cursor = db.collection("employee").find();
+        let db = client.db("mydb");
+        let cursor = db.collection("myCollection").find();
         let users = [];
         //cursor.forEach(callback1, callback2)
         cursor.forEach((doc, err) => {
@@ -43,9 +43,9 @@ app.post("/users", (request, response) => {
         if(error)
             throw error;
         // connect to the mydb instance
-        let db = client.db("EMPLOYEES");
+        let db = client.db("mydb");
         // use the collection 'user' to insert the document
-        db.collection("employee").insertOne(userDocument, (err, res) => {
+        db.collection("myCollection").insertOne(userDocument, (err, res) => {
             if(err) {
                 // 409 status code is for conflict
                 response.status(409).json({"message": `User with an id ${userDocument._id} exists`});
@@ -65,9 +65,9 @@ app.get("/users/:id", (request, response) => {
         if(error)
             throw error;
         // use the mydb instance
-        let db = client.db("EMPLOYEES");
+        let db = client.db("mydb");
         // use the collection 'user'
-        db.collection("employee").findOne({_id:id})
+        db.collection("myCollection").findOne({_id:id})
         .then((doc) => {
             if(doc != null) {
                 response.json(doc);
@@ -83,9 +83,9 @@ app.delete("/users/:id", (request, response) => {
     let id = parseInt(request.params.id);
     mongoClient.connect(dbURL, {useNewUrlParser:true}, (error, client) => {
         if(error) throw error;
-        let db = client.db("EMPLOYEES");
+        let db = client.db("mydb");
         // use the collection 'user' and deleteOne() to delete based on id
-        db.collection("employee").deleteOne({_id:id})
+        db.collection("myCollection").deleteOne({_id:id})
         .then((doc) => {
             response.json(doc);
             client.close();
@@ -98,9 +98,9 @@ app.put("/users/:id/:password", (request, response) => {
     let passwordNew = parseInt(request.params.password);
     mongoClient.connect(dbURL, {useNewUrlParser:true}, (error, client) => {
         if(error) throw error;
-        let db = client.db("EMPLOYEES");
+        let db = client.db("mydb");
         // use the collection 'user' and updateOne() to update the age on id
-        db.collection("employee").updateOne({_id:id}, {$set:{password: passwordNew}})
+        db.collection("myCollection").updateOne({_id:id}, {$set:{password: passwordNew}})
         .then((doc) => {
             response.json(doc);
             client.close();

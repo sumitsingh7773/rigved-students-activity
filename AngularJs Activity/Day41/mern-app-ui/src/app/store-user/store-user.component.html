@@ -1,0 +1,29 @@
+<div class="container-fluid">
+<h2>
+    Store Users Data
+</h2>
+<form [formGroup]="userForm" (ngSubmit)="handleSubmit()">
+    <div>
+        <label>
+            ID <input type="text" formControlName="_id">
+        </label>
+    </div>
+    <div>
+        <label>
+            Name <input type="text" formControlName="name">
+        </label>
+    </div>
+    <div>
+        <label>
+            Age <input type="text" formControlName="age">
+        </label>
+    </div>
+    <div>
+        <input type="submit" value="Register">
+    </div>
+</form>
+<div>
+    Info : <p *ngIf="users">{{users | json}}</p>
+    <p *ngIf="users">inserted Id : {{users.insertedId}}</p>
+</div>
+</div>
